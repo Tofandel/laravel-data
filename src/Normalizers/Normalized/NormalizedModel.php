@@ -39,7 +39,7 @@ class NormalizedModel implements Normalized
     protected function fetchNewProperty(string $name, DataProperty $dataProperty): mixed
     {
         if ($this->hasModelAttribute($name)) {
-            return $this->properties[$name] = $this->model->getAttributeValue($name);
+            return $this->properties[$name] = $this->model->getAttribute($name);
         }
 
         $camelName = Str::camel($name);
