@@ -68,7 +68,7 @@ class NormalizedModel implements Normalized
             return $this->model->hasAttribute($name);
         }
 
-        // TODO: to use that one once we stop supporting Laravel 10
+        // TODO: remove this once we stop supporting Laravel 10
 
         if (! isset($this->attributesProperty)) {
             $this->attributesProperty = new ReflectionProperty($this->model, 'attributes');
