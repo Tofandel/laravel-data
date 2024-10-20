@@ -47,9 +47,10 @@ class NormalizedModel implements Normalized
             return $this->properties[$name] = $this->model->getRelation($name);
         }
 
-        if (!$this->model->isRelation($name)) {
+        if (! $this->model->isRelation($name)) {
             try {
                 $propertyName = $this->model::$snakeAttributes ? Str::snake($name) : $name;
+
                 return $this->properties[$name] = $this->model->getAttribute($propertyName);
             } catch (MissingAttributeException) {
                 // Fallback if missing Attribute
